@@ -73,7 +73,7 @@ const run = async () => {
 
     debug(`${reviews.length} total valid reviews`)
     Object.keys(ReviewState)
-      .filter(key => /^[a-zA-Z]+$/.test(key))
+      .filter(key => /^[a-z_A-Z]+$/.test(key))
       .forEach(stateName => {
         const stateReviewsCount = reviews.filter(review => review.state === ((stateName as unknown) as ReviewState))
           .length
